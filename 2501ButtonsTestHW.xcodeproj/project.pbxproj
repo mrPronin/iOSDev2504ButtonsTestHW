@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A26864561902DC2600EBA3C5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A26864551902DC2600EBA3C5 /* README.md */; };
 		A28BC5411902CF17007BD467 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A28BC5401902CF17007BD467 /* Foundation.framework */; };
 		A28BC5431902CF17007BD467 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A28BC5421902CF17007BD467 /* CoreGraphics.framework */; };
 		A28BC5451902CF17007BD467 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A28BC5441902CF17007BD467 /* UIKit.framework */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A26864551902DC2600EBA3C5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		A28BC53D1902CF17007BD467 /* 2501ButtonsTestHW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2501ButtonsTestHW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28BC5401902CF17007BD467 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A28BC5421902CF17007BD467 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,6 +89,7 @@
 		A28BC5341902CF17007BD467 = {
 			isa = PBXGroup;
 			children = (
+				A26864551902DC2600EBA3C5 /* README.md */,
 				A28BC5461902CF17007BD467 /* 2501ButtonsTestHW */,
 				A28BC5681902CF17007BD467 /* 2501ButtonsTestHWTests */,
 				A28BC53F1902CF17007BD467 /* Frameworks */,
@@ -239,6 +242,7 @@
 			files = (
 				A28BC5571902CF17007BD467 /* Main_iPad.storyboard in Resources */,
 				A28BC55C1902CF17007BD467 /* Images.xcassets in Resources */,
+				A26864561902DC2600EBA3C5 /* README.md in Resources */,
 				A28BC5791902CF91007BD467 /* Main_iPhone.storyboard in Resources */,
 				A28BC54B1902CF17007BD467 /* InfoPlist.strings in Resources */,
 			);
@@ -469,6 +473,7 @@
 				A28BC5741902CF17007BD467 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A28BC5751902CF17007BD467 /* Build configuration list for PBXNativeTarget "2501ButtonsTestHWTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +482,7 @@
 				A28BC5771902CF17007BD467 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

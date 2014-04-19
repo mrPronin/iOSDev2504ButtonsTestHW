@@ -22,6 +22,9 @@
     [super viewDidLoad];
     
     if (!IS_WIDESCREEN) {
+        
+        self.displayLabel.center = CGPointMake(self.displayLabel.center.x, self.displayLabel.center.y - 88);
+        
         for (UIView *view in self.view.subviews) {
             
             if ([view isKindOfClass:[RITCalcButton class]]) {
@@ -40,12 +43,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Helper functions
+
+- (void) setDisplayWithSender:(RITCalcButton *)sender {
+    
+    self.displayLabel.text = sender.currentTitle;
+}
+
+#pragma mark - Actions
+
 - (IBAction)actionNumberButtonTouchUpInside:(RITCalcButton *)sender {
     
     NSLog(@"Number button pressed: %@", sender.currentTitle);
 }
 
 - (IBAction)actionAnyCalcButtonTouchUpInside:(RITCalcButton *)sender {
+    
+    [self setDisplayWithSender:sender];
     
     [self.view bringSubviewToFront:sender];
     
@@ -57,6 +71,11 @@
         sender.transform = CGAffineTransformIdentity;
     }];
     
+}
+
+- (IBAction)actionOperationButtonTouchUpInside:(RITCalcButton *)sender {
+    
+    NSLog(@"Operation button pressed: %@", sender.currentTitle);
 }
 
 @end

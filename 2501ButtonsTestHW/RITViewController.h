@@ -13,5 +13,8 @@
 
 - (IBAction)actionNumberButtonTouchUpInside:(RITCalcButton *)sender;
 - (IBAction)actionAnyCalcButtonTouchUpInside:(RITCalcButton *)sender;
+- (IBAction)actionOperationButtonTouchUpInside:(RITCalcButton *)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *displayLabel;
 
 @end
