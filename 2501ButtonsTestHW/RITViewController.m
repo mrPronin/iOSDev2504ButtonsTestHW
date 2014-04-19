@@ -42,24 +42,21 @@
 
 - (IBAction)actionNumberButtonTouchUpInside:(RITCalcButton *)sender {
     
-    /*
-     sender.backgroundColor = [UIColor whiteColor];
-     [sender setNeedsDisplay];
-     */
-    
-    UIColor *buttonBackgroundColor = sender.backgroundColor;
+    NSLog(@"Number button pressed: %@", sender.currentTitle);
+}
+
+- (IBAction)actionAnyCalcButtonTouchUpInside:(RITCalcButton *)sender {
     
     [self.view bringSubviewToFront:sender];
     
     [UIView animateWithDuration:0.5f animations:^{
         sender.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
-        //sender.alpha = 1.0f;
-        sender.backgroundColor = [UIColor whiteColor];
     }];
+    
     [UIView animateWithDuration:0.5f animations:^{
         sender.transform = CGAffineTransformIdentity;
-        //sender.alpha = 1.f;
-        sender.backgroundColor = buttonBackgroundColor;
     }];
+    
 }
+
 @end

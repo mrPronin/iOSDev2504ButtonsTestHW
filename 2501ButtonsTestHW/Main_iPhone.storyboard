@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="zx7-2Z-NL4" customClass="RITCalcButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="zx7-2Z-NL4" customClass="RITCalcButton">
                                 <rect key="frame" x="0.0" y="168" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -22,10 +22,10 @@
                                     <color key="titleShadowColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kXS-NO-Aw8"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="V1Q-7q-COn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="yoJ-js-IdL" customClass="RITCalcButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="yoJ-js-IdL" customClass="RITCalcButton">
                                 <rect key="frame" x="80" y="168" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -35,10 +35,10 @@
                                     <color key="titleShadowColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QIh-yd-2af"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Vyx-dm-5NZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="2NA-QH-k2P" customClass="RITCalcButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="2NA-QH-k2P" customClass="RITCalcButton">
                                 <rect key="frame" x="160" y="168" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,10 +48,10 @@
                                     <color key="titleShadowColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tTd-fp-aZS"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QjZ-Qa-ckb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="RoJ-Xo-KYT" customClass="RITCalcButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="RoJ-Xo-KYT" customClass="RITCalcButton">
                                 <rect key="frame" x="160" y="248" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -61,10 +61,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="A4j-iR-4Un"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="noL-0k-0R1"/>
+                                    <action selector="actionNumberButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Z5O-SR-Gz5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="zFh-6Q-Mkl" customClass="RITCalcButton">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="zFh-6Q-Mkl" customClass="RITCalcButton">
                                 <rect key="frame" x="80" y="248" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,10 +75,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ae9-L4-yva"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Dem-ub-0c2"/>
+                                    <action selector="actionNumberButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="amq-iv-Xaa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Dgf-K3-11A" customClass="RITCalcButton">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Dgf-K3-11A" customClass="RITCalcButton">
                                 <rect key="frame" x="0.0" y="248" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -87,10 +89,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Wn1-UO-lIE"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LV8-TF-8aZ"/>
+                                    <action selector="actionNumberButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Zd8-ku-PjB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="ePF-kB-S6T" customClass="RITCalcButton">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="ePF-kB-S6T" customClass="RITCalcButton">
                                 <rect key="frame" x="160" y="328" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -100,10 +103,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3PI-Jh-BQS"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZOX-dA-nmW"/>
+                                    <action selector="actionNumberButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pBW-hh-3Kt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="UaT-kp-TmG" customClass="RITCalcButton">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="UaT-kp-TmG" customClass="RITCalcButton">
                                 <rect key="frame" x="80" y="328" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -113,10 +117,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0x7-de-shq"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZOL-bL-QXi"/>
+                                    <action selector="actionNumberButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kjg-je-bkT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="9q1-Ij-0oS" customClass="RITCalcButton">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="9q1-Ij-0oS" customClass="RITCalcButton">
                                 <rect key="frame" x="0.0" y="328" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -126,10 +131,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XWV-0n-N8P"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Fmo-t0-t8x"/>
+                                    <action selector="actionNumberButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IEx-KM-rcW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="adS-Hd-RTS" customClass="RITCalcButton">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="adS-Hd-RTS" customClass="RITCalcButton">
                                 <rect key="frame" x="160" y="408" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -139,10 +145,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1fD-th-DeL"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zS7-va-FNd"/>
+                                    <action selector="actionNumberButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="T9A-pQ-Dpi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="VnH-0y-yxI" customClass="RITCalcButton">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="VnH-0y-yxI" customClass="RITCalcButton">
                                 <rect key="frame" x="80" y="408" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -152,10 +159,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3XF-07-Wtl"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hXE-SL-gPN"/>
+                                    <action selector="actionNumberButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nYe-yR-Vrb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="V6g-q3-ksu" customClass="RITCalcButton">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="V6g-q3-ksu" customClass="RITCalcButton">
                                 <rect key="frame" x="0.0" y="408" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -165,10 +173,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jz0-vB-mbo"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="WrR-rY-Qe0"/>
+                                    <action selector="actionNumberButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wei-tj-Eu3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="2if-MA-8or" customClass="RITCalcButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="2if-MA-8or" customClass="RITCalcButton">
                                 <rect key="frame" x="0.0" y="488" width="160" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -179,10 +188,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="X4u-Le-2eF"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jqG-Jf-glK"/>
+                                    <action selector="actionNumberButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9ML-C7-HCC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="QlD-f5-wa8" customClass="RITCalcButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="QlD-f5-wa8" customClass="RITCalcButton">
                                 <rect key="frame" x="160" y="488" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -193,10 +203,10 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iiU-vw-slX"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ufI-IX-Lj0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="6eG-vg-jRR" customClass="RITCalcButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="6eG-vg-jRR" customClass="RITCalcButton">
                                 <rect key="frame" x="240" y="168" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -206,10 +216,10 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ggc-Gd-ouL"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4Rd-VF-nR9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="gaw-C8-omJ" customClass="RITCalcButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="gaw-C8-omJ" customClass="RITCalcButton">
                                 <rect key="frame" x="240" y="248" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -220,10 +230,10 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fsy-dg-CHl"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qAc-WB-8Pg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="WPH-ke-TKV" customClass="RITCalcButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="WPH-ke-TKV" customClass="RITCalcButton">
                                 <rect key="frame" x="240" y="328" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -233,10 +243,10 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mwd-Sb-2a3"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="txk-TV-2bT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="jlB-dC-obs" customClass="RITCalcButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="jlB-dC-obs" customClass="RITCalcButton">
                                 <rect key="frame" x="240" y="408" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -246,10 +256,10 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jgo-jA-K3Z"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8TL-fe-vAW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="JcH-gh-hAO" customClass="RITCalcButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="JcH-gh-hAO" customClass="RITCalcButton">
                                 <rect key="frame" x="240" y="488" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -259,7 +269,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="p1v-NL-2ar"/>
+                                    <action selector="actionAnyCalcButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="BfE-Vn-xMD"/>
                                 </connections>
                             </button>
                         </subviews>

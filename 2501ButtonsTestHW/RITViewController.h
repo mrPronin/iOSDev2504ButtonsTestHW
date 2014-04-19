@@ -12,5 +12,6 @@
 @interface RITViewController : UIViewController
 
 - (IBAction)actionNumberButtonTouchUpInside:(RITCalcButton *)sender;
+- (IBAction)actionAnyCalcButtonTouchUpInside:(RITCalcButton *)sender;
 
 @end
