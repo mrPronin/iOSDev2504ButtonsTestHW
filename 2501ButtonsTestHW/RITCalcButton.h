@@ -1,5 +1,5 @@
 //
-//  RITViewController.h
+//  RITCalcButton.h
 //  2501ButtonsTestHW
 //
 //  Created by Pronin Alexander on 19.04.14.
@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RITCalcButton.h"
 
-@interface RITViewController : UIViewController
-
-- (IBAction)actionNumberButtonTouchUpInside:(RITCalcButton *)sender;
+@interface RITCalcButton : UIButton
 
 @end

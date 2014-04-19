@@ -13,7 +13,6 @@
 		A28BC54B1902CF17007BD467 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A28BC5491902CF17007BD467 /* InfoPlist.strings */; };
 		A28BC54D1902CF17007BD467 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A28BC54C1902CF17007BD467 /* main.m */; };
 		A28BC5511902CF17007BD467 /* RITAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A28BC5501902CF17007BD467 /* RITAppDelegate.m */; };
-		A28BC5541902CF17007BD467 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28BC5521902CF17007BD467 /* Main_iPhone.storyboard */; };
 		A28BC5571902CF17007BD467 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28BC5551902CF17007BD467 /* Main_iPad.storyboard */; };
 		A28BC55A1902CF17007BD467 /* RITViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A28BC5591902CF17007BD467 /* RITViewController.m */; };
 		A28BC55C1902CF17007BD467 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A28BC55B1902CF17007BD467 /* Images.xcassets */; };
@@ -22,6 +21,8 @@
 		A28BC5651902CF17007BD467 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A28BC5441902CF17007BD467 /* UIKit.framework */; };
 		A28BC56D1902CF17007BD467 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A28BC56B1902CF17007BD467 /* InfoPlist.strings */; };
 		A28BC56F1902CF17007BD467 /* _501ButtonsTestHWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A28BC56E1902CF17007BD467 /* _501ButtonsTestHWTests.m */; };
+		A28BC5791902CF91007BD467 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28BC5781902CF91007BD467 /* Main_iPhone.storyboard */; };
+		A28BC57C1902CFD7007BD467 /* RITCalcButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A28BC57B1902CFD7007BD467 /* RITCalcButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,6 @@
 		A28BC54E1902CF17007BD467 /* 2501ButtonsTestHW-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2501ButtonsTestHW-Prefix.pch"; sourceTree = "<group>"; };
 		A28BC54F1902CF17007BD467 /* RITAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RITAppDelegate.h; sourceTree = "<group>"; };
 		A28BC5501902CF17007BD467 /* RITAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RITAppDelegate.m; sourceTree = "<group>"; };
-		A28BC5531902CF17007BD467 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		A28BC5561902CF17007BD467 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		A28BC5581902CF17007BD467 /* RITViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RITViewController.h; sourceTree = "<group>"; };
 		A28BC5591902CF17007BD467 /* RITViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RITViewController.m; sourceTree = "<group>"; };
@@ -55,6 +55,9 @@
 		A28BC56A1902CF17007BD467 /* 2501ButtonsTestHWTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "2501ButtonsTestHWTests-Info.plist"; sourceTree = "<group>"; };
 		A28BC56C1902CF17007BD467 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A28BC56E1902CF17007BD467 /* _501ButtonsTestHWTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _501ButtonsTestHWTests.m; sourceTree = "<group>"; };
+		A28BC5781902CF91007BD467 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		A28BC57A1902CFD7007BD467 /* RITCalcButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITCalcButton.h; sourceTree = "<group>"; };
+		A28BC57B1902CFD7007BD467 /* RITCalcButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITCalcButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,10 +119,12 @@
 			children = (
 				A28BC54F1902CF17007BD467 /* RITAppDelegate.h */,
 				A28BC5501902CF17007BD467 /* RITAppDelegate.m */,
-				A28BC5521902CF17007BD467 /* Main_iPhone.storyboard */,
+				A28BC5781902CF91007BD467 /* Main_iPhone.storyboard */,
 				A28BC5551902CF17007BD467 /* Main_iPad.storyboard */,
 				A28BC5581902CF17007BD467 /* RITViewController.h */,
 				A28BC5591902CF17007BD467 /* RITViewController.m */,
+				A28BC57A1902CFD7007BD467 /* RITCalcButton.h */,
+				A28BC57B1902CFD7007BD467 /* RITCalcButton.m */,
 				A28BC55B1902CF17007BD467 /* Images.xcassets */,
 				A28BC5471902CF17007BD467 /* Supporting Files */,
 			);
@@ -234,7 +239,7 @@
 			files = (
 				A28BC5571902CF17007BD467 /* Main_iPad.storyboard in Resources */,
 				A28BC55C1902CF17007BD467 /* Images.xcassets in Resources */,
-				A28BC5541902CF17007BD467 /* Main_iPhone.storyboard in Resources */,
+				A28BC5791902CF91007BD467 /* Main_iPhone.storyboard in Resources */,
 				A28BC54B1902CF17007BD467 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A28BC57C1902CFD7007BD467 /* RITCalcButton.m in Sources */,
 				A28BC5511902CF17007BD467 /* RITAppDelegate.m in Sources */,
 				A28BC54D1902CF17007BD467 /* main.m in Sources */,
 				A28BC55A1902CF17007BD467 /* RITViewController.m in Sources */,
@@ -285,14 +291,6 @@
 				A28BC54A1902CF17007BD467 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		A28BC5521902CF17007BD467 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A28BC5531902CF17007BD467 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		A28BC5551902CF17007BD467 /* Main_iPad.storyboard */ = {
