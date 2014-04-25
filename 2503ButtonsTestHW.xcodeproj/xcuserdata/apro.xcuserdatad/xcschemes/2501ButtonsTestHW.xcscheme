@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A28BC53C1902CF17007BD467"
-               BuildableName = "2501ButtonsTestHW.app"
+               BuildableName = "2503ButtonsTestHW.app"
                BlueprintName = "2503ButtonsTestHW"
                ReferencedContainer = "container:2503ButtonsTestHW.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A28BC5601902CF17007BD467"
-               BuildableName = "2501ButtonsTestHWTests.xctest"
+               BuildableName = "2503ButtonsTestHWTests.xctest"
                BlueprintName = "2503ButtonsTestHWTests"
                ReferencedContainer = "container:2503ButtonsTestHW.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A28BC53C1902CF17007BD467"
-            BuildableName = "2501ButtonsTestHW.app"
+            BuildableName = "2503ButtonsTestHW.app"
             BlueprintName = "2503ButtonsTestHW"
             ReferencedContainer = "container:2503ButtonsTestHW.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A28BC53C1902CF17007BD467"
-            BuildableName = "2501ButtonsTestHW.app"
+            BuildableName = "2503ButtonsTestHW.app"
             BlueprintName = "2503ButtonsTestHW"
             ReferencedContainer = "container:2503ButtonsTestHW.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A28BC53C1902CF17007BD467"
-            BuildableName = "2501ButtonsTestHW.app"
+            BuildableName = "2503ButtonsTestHW.app"
             BlueprintName = "2503ButtonsTestHW"
             ReferencedContainer = "container:2503ButtonsTestHW.xcodeproj">
          </BuildableReference>

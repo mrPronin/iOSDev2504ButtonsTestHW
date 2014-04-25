@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *displayLabel;
 @property (strong, nonatomic) IBOutletCollection(RITCalcButton) NSArray *operationButtons;
 
-@property (assign, nonatomic) CGFloat firstValue;
-@property (assign, nonatomic) CGFloat secondValue;
+@property (assign, nonatomic) long long firstValue;
+@property (assign, nonatomic) long long secondValue;
 
 @end

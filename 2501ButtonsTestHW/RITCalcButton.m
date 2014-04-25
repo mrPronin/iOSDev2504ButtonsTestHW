@@ -19,7 +19,6 @@
     return self;
 }
 
-
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
@@ -33,6 +32,14 @@
     CGContextAddRect(context, rect);
     CGContextStrokePath(context);
     
+}
+
++ (UIColor*) selectedOperationColor {
+    return [UIColor colorWithRed:(CGFloat)253/255 green:(CGFloat)161/255 blue:(CGFloat)106/255 alpha:1.f];
+}
+
++ (UIColor*) normalOperationColor {
+    return [UIColor colorWithRed:(CGFloat)255/255 green:(CGFloat)102/255 blue:(CGFloat)0/255 alpha:1.f];
 }
 
 @end

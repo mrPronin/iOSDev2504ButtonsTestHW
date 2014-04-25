@@ -34,6 +34,9 @@
         }
     }
     
+    self.firstValue = 0;
+    self.secondValue = 0;
+    
     //NSLog(@"Frame: %@, bounds: %@", NSStringFromCGRect(self.view.frame), NSStringFromCGRect(self.view.bounds));
 }
 
@@ -47,47 +50,64 @@
 
 - (void) numberKeyPressedWithNumber:(NSUInteger) num andSender:(RITCalcButton *)sender {
     
-    NSString *currentDisplayString = self.displayLabel.text;
+    RITCalcButton *selectedOperation = [self selectedOperation];
+    
+    NSString *currentDisplayString = nil;
+    if ((self.secondValue == 0) && (selectedOperation)) {
+        // first number input after the operation is selected
+        // need to reset the current display string
+        currentDisplayString = @"";
+    } else {
+        currentDisplayString = self.displayLabel.text;
+    }
     
     if ([currentDisplayString length] <= RITmaxDisplaySign) {
         
         NSString *displayString = [NSString stringWithFormat:@"%@%d", (currentDisplayString)?currentDisplayString:@"", num];
         self.displayLabel.text = displayString;
         
-        self.firstValue = displayString.floatValue;
+        if (!selectedOperation) {
+            self.firstValue = displayString.longLongValue;
+        } else {
+            self.secondValue = displayString.longLongValue;
+        }
         
-        NSLog(@"First value: %.2f", self.firstValue);
+        NSLog(@"Value: %lld", displayString.longLongValue);
     }
     
-    [self performStandardAnimationWithSender:sender];
+    [self performStandardAnimation:sender];
 }
 
-- (void) resetDisplayWithSender:(RITCalcButton *)sender {
+- (void) resetDisplay:(RITCalcButton *)sender {
     
     self.displayLabel.text = nil;
+    self.firstValue = 0;
+    self.secondValue = 0;
     
-    [self performStandardAnimationWithSender:sender];
+    [self resetSelectionForOperations];
+    
+    [self performStandardAnimation:sender];
 }
 
-- (void) backspaceDisplayWithSender:(RITCalcButton *)sender {
+- (void) backspaceDisplay:(RITCalcButton *)sender {
     
     NSString *currentDisplayString = self.displayLabel.text;
-    if (currentDisplayString) {
+    if ((currentDisplayString) && ([currentDisplayString length] > 0)) {
         NSString *displayString = [currentDisplayString substringToIndex:[currentDisplayString length] - 1];
         self.displayLabel.text = displayString;
     }
     
-    [self performStandardAnimationWithSender:sender];
+    [self performStandardAnimation:sender];
 }
 
-- (void) setOperation:(RITCalcBtns) operation withSender:(RITCalcButton *)sender {
+- (void) setOperation:(RITCalcButton *)sender {
     
     [self resetSelectionForOperations];
     
     [self setSelectionForOperation:sender];
 }
 
-- (void) performStandardAnimationWithSender:(RITCalcButton *)sender {
+- (void) performStandardAnimation:(RITCalcButton *)sender {
     
     [UIView animateWithDuration:0.1f animations:^{
         sender.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
@@ -108,7 +128,7 @@
     
     [UIView animateWithDuration:0.1f animations:^{
         sender.transform = CGAffineTransformIdentity;
-        sender.backgroundColor = [UIColor colorWithRed:0.9922f green:0.6314f blue:0.4157f alpha:1.f];
+        sender.backgroundColor = [RITCalcButton selectedOperationColor];
     }];
 }
 
@@ -118,12 +138,81 @@
         if (btn.isSelected) {
             
             [btn setSelected:NO];
-            
-            [UIView animateWithDuration:0 animations:^{
-                btn.transform = CGAffineTransformIdentity;
-                // !!! set background
-            }];
+            btn.backgroundColor = [RITCalcButton normalOperationColor];
         }
+    }
+}
+
+- (RITCalcButton*) selectedOperation {
+    RITCalcButton *selected = nil;
+    
+    for (RITCalcButton *btn in self.operationButtons) {
+        if (btn.isSelected) {
+            
+            selected = btn;
+            break;
+        }
+    }
+    return selected;
+}
+
+- (void) invertTheValue:(RITCalcButton*) sender {
+    
+    [self performStandardAnimation:sender];
+    
+    if (self.firstValue == 0) {
+        return;
+    }
+    
+    self.firstValue = self.firstValue * (-1);
+    //NSString *displayString = [NSString stringWithFormat:@"%.2f", self.firstValue];
+    NSString *displayString = [NSString stringWithFormat:@"%d", (NSInteger)self.firstValue];
+    self.displayLabel.text = displayString;
+    NSLog(@"Value: %lld", self.firstValue);
+}
+
+- (void) performOperation:(RITCalcButton*) sender {
+    
+    RITCalcButton *selectedOperation = [self selectedOperation];
+    
+    [self resetSelectionForOperations];
+    [self performStandardAnimation:sender];
+    
+    long long calculationResult = 0;
+    
+    if (selectedOperation) {
+        switch (selectedOperation.tag) {
+            
+            case RITCalcBtnsDivide:
+                
+                if (self.secondValue == 0) {
+                    
+                    calculationResult = 0;
+                } else {
+                    
+                    calculationResult = (long long)(self.firstValue / self.secondValue);
+                }
+                break;
+                
+            case RITCalcBtnsMultiply:
+                calculationResult = self.firstValue * self.secondValue;
+                break;
+                
+            case RITCalcBtnsSubstract:
+                calculationResult = self.firstValue - self.secondValue;
+                break;
+                
+            case RITCalcBtnsAppend:
+                calculationResult = self.firstValue + self.secondValue;
+                break;
+        }
+        
+        self.secondValue = 0;
+        self.firstValue = calculationResult;
+        //NSString *displayString = [NSString stringWithFormat:@"%.2f", self.firstValue];
+        NSString *displayString = [NSString stringWithFormat:@"%lld", (long long)self.firstValue];
+        self.displayLabel.text = displayString;
+        NSLog(@"Value: %lld", self.firstValue);
     }
 }
 
@@ -137,28 +226,31 @@
         [self numberKeyPressedWithNumber:sender.tag andSender:sender];
     } else {
         switch (sender.tag) {
+            
             case RITCalcBtnsReset:
-                [self resetDisplayWithSender:sender];
+                [self resetDisplay:sender];
                 break;
                 
             case RITCalcBtnsBackspace:
-                [self backspaceDisplayWithSender:sender];
+                [self backspaceDisplay:sender];
                 break;
                 
             case RITCalcBtnsDivide:
             case RITCalcBtnsMultiply:
             case RITCalcBtnsSubstract:
             case RITCalcBtnsAppend:
-                [self setOperation:sender.tag withSender:sender];
+                [self setOperation:sender];
                 break;
                 
-            default:
+            case RITCalcBtnsResult:
+                [self performOperation:sender];
+                break;
+                
+            case RITCalcBtnsInvert:
+                [self invertTheValue:sender];
                 break;
         }
     }
-    
-    
-    
 }
 
 @end

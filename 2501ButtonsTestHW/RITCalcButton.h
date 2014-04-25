@@ -14,11 +14,16 @@ typedef enum {
     RITCalcBtnsDivide = 14,
     RITCalcBtnsMultiply = 15,
     RITCalcBtnsSubstract = 16,
-    RITCalcBtnsAppend = 17
+    RITCalcBtnsAppend = 17,
+    RITCalcBtnsResult = 18,
+    RITCalcBtnsInvert = 12
 } RITCalcBtns;
 
 #define RITmaxDisplaySign    12
 
 @interface RITCalcButton : UIButton
+
++ (UIColor*) selectedOperationColor;
++ (UIColor*) normalOperationColor;
 
 @end
