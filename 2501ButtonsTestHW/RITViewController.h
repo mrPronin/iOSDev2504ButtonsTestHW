@@ -14,5 +14,9 @@
 - (IBAction)actionAnyCalcButtonTouchUpInside:(RITCalcButton *)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *displayLabel;
+@property (strong, nonatomic) IBOutletCollection(RITCalcButton) NSArray *operationButtons;
+
+@property (assign, nonatomic) CGFloat firstValue;
+@property (assign, nonatomic) CGFloat secondValue;
 
 @end

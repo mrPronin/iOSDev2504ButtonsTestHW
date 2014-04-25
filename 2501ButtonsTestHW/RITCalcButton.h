@@ -10,7 +10,11 @@
 
 typedef enum {
     RITCalcBtnsReset = 10,
-    RITCalcBtnsBackspace = 11
+    RITCalcBtnsBackspace = 11,
+    RITCalcBtnsDivide = 14,
+    RITCalcBtnsMultiply = 15,
+    RITCalcBtnsSubstract = 16,
+    RITCalcBtnsAppend = 17
 } RITCalcBtns;
 
 #define RITmaxDisplaySign    12
