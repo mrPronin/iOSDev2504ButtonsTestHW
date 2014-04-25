@@ -13,7 +13,7 @@ typedef enum {
     RITCalcBtnsBackspace = 11
 } RITCalcBtns;
 
-#define maxDisplaySign    12
+#define RITmaxDisplaySign    12
 
 @interface RITCalcButton : UIButton
 

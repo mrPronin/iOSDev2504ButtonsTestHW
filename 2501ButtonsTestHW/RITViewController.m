@@ -49,7 +49,7 @@
     
     NSString *currentDisplayString = self.displayLabel.text;
     
-    if ([currentDisplayString length] <= maxDisplaySign) {
+    if ([currentDisplayString length] <= RITmaxDisplaySign) {
         
         NSString *displayString = [NSString stringWithFormat:@"%@%d", (currentDisplayString)?currentDisplayString:@"", num];
         self.displayLabel.text = displayString;
