@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    RITCalcBtnsReset = 10,
+    RITCalcBtnsBackspace = 11
+} RITCalcBtns;
+
+#define maxDisplaySign    12
+
 @interface RITCalcButton : UIButton
 
 @end

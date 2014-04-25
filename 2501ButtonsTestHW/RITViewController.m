@@ -45,37 +45,65 @@
 
 #pragma mark - Helper functions
 
-- (void) setDisplayWithSender:(RITCalcButton *)sender {
+- (void) numberKeyPressedWithNumber:(NSUInteger) num {
     
-    self.displayLabel.text = sender.currentTitle;
+    NSString *currentDisplayString = self.displayLabel.text;
+    
+    if ([currentDisplayString length] <= maxDisplaySign) {
+        
+        NSString *displayString = [NSString stringWithFormat:@"%@%d", (currentDisplayString)?currentDisplayString:@"", num];
+        self.displayLabel.text = displayString;
+    }
+}
+
+- (void) resetDisplay {
+    
+    self.displayLabel.text = nil;
+}
+
+- (void) backspaceDisplay {
+    
+    NSString *currentDisplayString = self.displayLabel.text;
+    if (currentDisplayString) {
+        NSString *displayString = [currentDisplayString substringToIndex:[currentDisplayString length] - 1];
+        self.displayLabel.text = displayString;
+    }
 }
 
 #pragma mark - Actions
 
-- (IBAction)actionNumberButtonTouchUpInside:(RITCalcButton *)sender {
-    
-    NSLog(@"Number button pressed: %@", sender.currentTitle);
-}
-
 - (IBAction)actionAnyCalcButtonTouchUpInside:(RITCalcButton *)sender {
     
-    [self setDisplayWithSender:sender];
+    if (sender.tag < 10) {
+        [self numberKeyPressedWithNumber:sender.tag];
+    } else {
+        switch (sender.tag) {
+            case RITCalcBtnsReset:
+                [self resetDisplay];
+                break;
+                
+            case RITCalcBtnsBackspace:
+                [self backspaceDisplay];
+                break;
+                
+            default:
+                break;
+        }
+    }
+    
+    
     
     [self.view bringSubviewToFront:sender];
     
-    [UIView animateWithDuration:0.5f animations:^{
+    
+    [UIView animateWithDuration:0.1f animations:^{
         sender.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
     }];
     
-    [UIView animateWithDuration:0.5f animations:^{
+    [UIView animateWithDuration:0.1f animations:^{
         sender.transform = CGAffineTransformIdentity;
     }];
     
-}
-
-- (IBAction)actionOperationButtonTouchUpInside:(RITCalcButton *)sender {
-    
-    NSLog(@"Operation button pressed: %@", sender.currentTitle);
 }
 
 @end
