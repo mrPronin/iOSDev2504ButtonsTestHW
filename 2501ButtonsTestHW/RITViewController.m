@@ -91,10 +91,20 @@
 
 - (void) backspaceDisplay:(RITCalcButton *)sender {
     
+    RITCalcButton *selectedOperation = [self selectedOperation];
+    
     NSString *currentDisplayString = self.displayLabel.text;
     if ((currentDisplayString) && ([currentDisplayString length] > 0)) {
         NSString *displayString = [currentDisplayString substringToIndex:[currentDisplayString length] - 1];
         self.displayLabel.text = displayString;
+        
+        if (!selectedOperation) {
+            self.firstValue = displayString.longLongValue;
+        } else {
+            self.secondValue = displayString.longLongValue;
+        }
+        
+        NSLog(@"Value: %lld", displayString.longLongValue);
     }
     
     [self performStandardAnimation:sender];
