@@ -67,12 +67,12 @@
         self.displayLabel.text = displayString;
         
         if (!selectedOperation) {
-            self.firstValue = displayString.longLongValue;
+            self.firstValue = displayString.doubleValue;
         } else {
-            self.secondValue = displayString.longLongValue;
+            self.secondValue = displayString.doubleValue;
         }
         
-        NSLog(@"Value: %lld", displayString.longLongValue);
+        NSLog(@"Value: %f", displayString.doubleValue);
     }
     
     [self performStandardAnimation:sender];
@@ -99,12 +99,12 @@
         self.displayLabel.text = displayString;
         
         if (!selectedOperation) {
-            self.firstValue = displayString.longLongValue;
+            self.firstValue = displayString.doubleValue;
         } else {
-            self.secondValue = displayString.longLongValue;
+            self.secondValue = displayString.doubleValue;
         }
         
-        NSLog(@"Value: %lld", displayString.longLongValue);
+        NSLog(@"Value: %f", displayString.doubleValue);
     }
     
     [self performStandardAnimation:sender];
@@ -175,10 +175,10 @@
     }
     
     self.firstValue = self.firstValue * (-1);
-    //NSString *displayString = [NSString stringWithFormat:@"%.2f", self.firstValue];
-    NSString *displayString = [NSString stringWithFormat:@"%d", (NSInteger)self.firstValue];
+    NSString *displayString = [NSString stringWithFormat:@"%.2f", self.firstValue];
+    //NSString *displayString = [NSString stringWithFormat:@"%d", (NSInteger)self.firstValue];
     self.displayLabel.text = displayString;
-    NSLog(@"Value: %lld", self.firstValue);
+    NSLog(@"Value: %f", self.firstValue);
 }
 
 - (void) performOperation:(RITCalcButton*) sender {
@@ -188,7 +188,7 @@
     [self resetSelectionForOperations];
     [self performStandardAnimation:sender];
     
-    long long calculationResult = 0;
+    double calculationResult = 0;
     
     if (selectedOperation) {
         switch (selectedOperation.tag) {
@@ -200,7 +200,7 @@
                     calculationResult = 0;
                 } else {
                     
-                    calculationResult = (long long)(self.firstValue / self.secondValue);
+                    calculationResult = self.firstValue / self.secondValue;
                 }
                 break;
                 
@@ -219,10 +219,10 @@
         
         self.secondValue = 0;
         self.firstValue = calculationResult;
-        //NSString *displayString = [NSString stringWithFormat:@"%.2f", self.firstValue];
-        NSString *displayString = [NSString stringWithFormat:@"%lld", (long long)self.firstValue];
+        NSString *displayString = [NSString stringWithFormat:@"%.2f", self.firstValue];
+        //NSString *displayString = [NSString stringWithFormat:@"%lld", (long long)self.firstValue];
         self.displayLabel.text = displayString;
-        NSLog(@"Value: %lld", self.firstValue);
+        NSLog(@"Value: %f", self.firstValue);
     }
 }
 
