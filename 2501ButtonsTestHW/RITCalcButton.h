@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 
 typedef enum {
-    RITCalcBtnsReset = 10,
+    RITCalcBtnsReset = 13,
     RITCalcBtnsBackspace = 11,
     RITCalcBtnsDivide = 14,
     RITCalcBtnsMultiply = 15,
     RITCalcBtnsSubstract = 16,
     RITCalcBtnsAppend = 17,
     RITCalcBtnsResult = 18,
+    RITCalcBtnsDDecimalPoint = 10,
     RITCalcBtnsInvert = 12
 } RITCalcBtns;
 

@@ -36,6 +36,8 @@
     
     self.firstValue = 0;
     self.secondValue = 0;
+    self.displayLabel.text = @"0";
+    self.isSecondValueInput = NO;
     
     //NSLog(@"Frame: %@, bounds: %@", NSStringFromCGRect(self.view.frame), NSStringFromCGRect(self.view.bounds));
 }
@@ -53,26 +55,42 @@
     RITCalcButton *selectedOperation = [self selectedOperation];
     
     NSString *currentDisplayString = nil;
-    if ((self.secondValue == 0) && (selectedOperation)) {
+    if ((!self.isSecondValueInput) && (selectedOperation)) {
         // first number input after the operation is selected
         // need to reset the current display string
-        currentDisplayString = @"";
+        currentDisplayString = @"0";
+        self.isSecondValueInput = YES;
     } else {
         currentDisplayString = self.displayLabel.text;
     }
     
     if ([currentDisplayString length] <= RITmaxDisplaySign) {
         
-        NSString *displayString = [NSString stringWithFormat:@"%@%d", (currentDisplayString)?currentDisplayString:@"", num];
+        NSString *displayString = nil;
+        if ([currentDisplayString isEqualToString:@"0"] && (num < RITCalcBtnsDDecimalPoint)) {
+            // zero value must be replaced with input number value
+            displayString = [NSString stringWithFormat:@"%d", num];
+        } else if (num == RITCalcBtnsDDecimalPoint) {
+            // only one decimal point may be in result value
+            NSRange range = [currentDisplayString rangeOfString:@"."];
+            if (range.location == NSNotFound) {
+                displayString = [NSString stringWithFormat:@"%@%@", currentDisplayString, @"."];
+            } else {
+                return;
+            }
+        } else {
+            displayString = [NSString stringWithFormat:@"%@%d", currentDisplayString, num];
+        }
+        
         self.displayLabel.text = displayString;
         
-        if (!selectedOperation) {
+        if (!self.isSecondValueInput) {
             self.firstValue = displayString.doubleValue;
         } else {
             self.secondValue = displayString.doubleValue;
         }
         
-        NSLog(@"Value: %f", displayString.doubleValue);
+        NSLog(@"Value: %@", displayString);
     }
     
     [self performStandardAnimation:sender];
@@ -80,9 +98,10 @@
 
 - (void) resetDisplay:(RITCalcButton *)sender {
     
-    self.displayLabel.text = nil;
+    self.displayLabel.text = @"0";
     self.firstValue = 0;
     self.secondValue = 0;
+    self.isSecondValueInput = NO;
     
     [self resetSelectionForOperations];
     
@@ -91,20 +110,27 @@
 
 - (void) backspaceDisplay:(RITCalcButton *)sender {
     
-    RITCalcButton *selectedOperation = [self selectedOperation];
+    //RITCalcButton *selectedOperation = [self selectedOperation];
     
     NSString *currentDisplayString = self.displayLabel.text;
     if ((currentDisplayString) && ([currentDisplayString length] > 0)) {
-        NSString *displayString = [currentDisplayString substringToIndex:[currentDisplayString length] - 1];
+        
+        NSString *displayString = nil;
+        if ([currentDisplayString length] == 1) {
+            displayString = @"0";
+        } else {
+            
+            displayString = [currentDisplayString substringToIndex:[currentDisplayString length] - 1];
+        }
         self.displayLabel.text = displayString;
         
-        if (!selectedOperation) {
+        if (!self.isSecondValueInput) {
             self.firstValue = displayString.doubleValue;
         } else {
             self.secondValue = displayString.doubleValue;
         }
         
-        NSLog(@"Value: %f", displayString.doubleValue);
+        NSLog(@"Value: %@", displayString);
     }
     
     [self performStandardAnimation:sender];
@@ -115,17 +141,6 @@
     [self resetSelectionForOperations];
     
     [self setSelectionForOperation:sender];
-}
-
-- (void) performStandardAnimation:(RITCalcButton *)sender {
-    
-    [UIView animateWithDuration:0.1f animations:^{
-        sender.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
-    }];
-    
-    [UIView animateWithDuration:0.1f animations:^{
-        sender.transform = CGAffineTransformIdentity;
-    }];
 }
 
 - (void) setSelectionForOperation:(RITCalcButton *)sender {
@@ -139,6 +154,17 @@
     [UIView animateWithDuration:0.1f animations:^{
         sender.transform = CGAffineTransformIdentity;
         sender.backgroundColor = [RITCalcButton selectedOperationColor];
+    }];
+}
+
+- (void) performStandardAnimation:(RITCalcButton *)sender {
+    
+    [UIView animateWithDuration:0.1f animations:^{
+        sender.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
+    }];
+    
+    [UIView animateWithDuration:0.1f animations:^{
+        sender.transform = CGAffineTransformIdentity;
     }];
 }
 
@@ -175,10 +201,22 @@
     }
     
     self.firstValue = self.firstValue * (-1);
-    NSString *displayString = [NSString stringWithFormat:@"%.2f", self.firstValue];
+    
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setUsesGroupingSeparator:NO];
+    [formatter setUsesSignificantDigits:YES];
+    [formatter setMaximumSignificantDigits:13];
+    
+    NSNumber *number = [NSNumber numberWithDouble:self.firstValue];
+    NSString *displayString = [formatter stringFromNumber:number];
+    
+    
+    //NSString *displayString = [NSString stringWithFormat:@"%f", self.firstValue];
     //NSString *displayString = [NSString stringWithFormat:@"%d", (NSInteger)self.firstValue];
     self.displayLabel.text = displayString;
-    NSLog(@"Value: %f", self.firstValue);
+    NSLog(@"Value: %@", displayString);
 }
 
 - (void) performOperation:(RITCalcButton*) sender {
@@ -201,28 +239,45 @@
                 } else {
                     
                     calculationResult = self.firstValue / self.secondValue;
+                    NSLog(@"%f / %f = %f", self.firstValue, self.secondValue, calculationResult);
                 }
                 break;
                 
             case RITCalcBtnsMultiply:
+                
                 calculationResult = self.firstValue * self.secondValue;
+                NSLog(@"%f * %f = %f", self.firstValue, self.secondValue, calculationResult);
                 break;
                 
             case RITCalcBtnsSubstract:
+                
                 calculationResult = self.firstValue - self.secondValue;
+                NSLog(@"%f - %f = %f", self.firstValue, self.secondValue, calculationResult);
                 break;
                 
             case RITCalcBtnsAppend:
+                
                 calculationResult = self.firstValue + self.secondValue;
+                NSLog(@"%f + %f = %f", self.firstValue, self.secondValue, calculationResult);
                 break;
         }
         
         self.secondValue = 0;
         self.firstValue = calculationResult;
-        NSString *displayString = [NSString stringWithFormat:@"%.2f", self.firstValue];
-        //NSString *displayString = [NSString stringWithFormat:@"%lld", (long long)self.firstValue];
+        self.isSecondValueInput = NO;
+        
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+        [formatter setUsesGroupingSeparator:NO];
+        [formatter setUsesSignificantDigits:YES];
+        [formatter setMaximumSignificantDigits:13];
+        
+        NSNumber *number = [NSNumber numberWithDouble:self.firstValue];
+        NSString *displayString = [formatter stringFromNumber:number];
+        
+        //NSString *displayString = [NSString stringWithFormat:@"%f", self.firstValue];
         self.displayLabel.text = displayString;
-        NSLog(@"Value: %f", self.firstValue);
+        NSLog(@"Value: %@", displayString);
     }
 }
 
@@ -232,7 +287,7 @@
     
     [self.view bringSubviewToFront:sender];
     
-    if (sender.tag < 10) {
+    if (sender.tag < RITCalcBtnsDDecimalPoint + 1) {
         [self numberKeyPressedWithNumber:sender.tag andSender:sender];
     } else {
         switch (sender.tag) {

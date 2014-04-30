@@ -18,5 +18,6 @@
 
 @property (assign, nonatomic) double firstValue;
 @property (assign, nonatomic) double secondValue;
+@property (assign, nonatomic) BOOL isSecondValueInput;
 
 @end
