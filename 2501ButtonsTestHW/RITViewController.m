@@ -38,8 +38,6 @@
     self.secondValue = 0;
     self.displayLabel.text = @"0";
     self.isSecondValueInput = NO;
-    
-    //NSLog(@"Frame: %@, bounds: %@", NSStringFromCGRect(self.view.frame), NSStringFromCGRect(self.view.bounds));
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,7 +90,6 @@
         
         NSLog(@"Value: %@", displayString);
     }
-    
     [self performStandardAnimation:sender];
 }
 
@@ -102,15 +99,11 @@
     self.firstValue = 0;
     self.secondValue = 0;
     self.isSecondValueInput = NO;
-    
     [self resetSelectionForOperations];
-    
     [self performStandardAnimation:sender];
 }
 
 - (void) backspaceDisplay:(RITCalcButton *)sender {
-    
-    //RITCalcButton *selectedOperation = [self selectedOperation];
     
     NSString *currentDisplayString = self.displayLabel.text;
     if ((currentDisplayString) && ([currentDisplayString length] > 0)) {
@@ -129,8 +122,7 @@
         } else {
             self.secondValue = displayString.doubleValue;
         }
-        
-        NSLog(@"Value: %@", displayString);
+        //NSLog(@"Value: %@", displayString);
     }
     
     [self performStandardAnimation:sender];
@@ -201,22 +193,9 @@
     }
     
     self.firstValue = self.firstValue * (-1);
-    
-    
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setUsesGroupingSeparator:NO];
-    [formatter setUsesSignificantDigits:YES];
-    [formatter setMaximumSignificantDigits:13];
-    
-    NSNumber *number = [NSNumber numberWithDouble:self.firstValue];
-    NSString *displayString = [formatter stringFromNumber:number];
-    
-    
-    //NSString *displayString = [NSString stringWithFormat:@"%f", self.firstValue];
-    //NSString *displayString = [NSString stringWithFormat:@"%d", (NSInteger)self.firstValue];
+    NSString *displayString = [self getDisplayString:self.firstValue];
     self.displayLabel.text = displayString;
-    NSLog(@"Value: %@", displayString);
+    //NSLog(@"Value: %@", displayString);
 }
 
 - (void) performOperation:(RITCalcButton*) sender {
@@ -239,46 +218,49 @@
                 } else {
                     
                     calculationResult = self.firstValue / self.secondValue;
-                    NSLog(@"%f / %f = %f", self.firstValue, self.secondValue, calculationResult);
+                    //NSLog(@"%f / %f = %f", self.firstValue, self.secondValue, calculationResult);
                 }
                 break;
                 
             case RITCalcBtnsMultiply:
                 
                 calculationResult = self.firstValue * self.secondValue;
-                NSLog(@"%f * %f = %f", self.firstValue, self.secondValue, calculationResult);
+                //NSLog(@"%f * %f = %f", self.firstValue, self.secondValue, calculationResult);
                 break;
                 
             case RITCalcBtnsSubstract:
                 
                 calculationResult = self.firstValue - self.secondValue;
-                NSLog(@"%f - %f = %f", self.firstValue, self.secondValue, calculationResult);
+                //NSLog(@"%f - %f = %f", self.firstValue, self.secondValue, calculationResult);
                 break;
                 
             case RITCalcBtnsAppend:
                 
                 calculationResult = self.firstValue + self.secondValue;
-                NSLog(@"%f + %f = %f", self.firstValue, self.secondValue, calculationResult);
+                //NSLog(@"%f + %f = %f", self.firstValue, self.secondValue, calculationResult);
                 break;
         }
         
         self.secondValue = 0;
         self.firstValue = calculationResult;
         self.isSecondValueInput = NO;
-        
-        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-        [formatter setUsesGroupingSeparator:NO];
-        [formatter setUsesSignificantDigits:YES];
-        [formatter setMaximumSignificantDigits:13];
-        
-        NSNumber *number = [NSNumber numberWithDouble:self.firstValue];
-        NSString *displayString = [formatter stringFromNumber:number];
-        
-        //NSString *displayString = [NSString stringWithFormat:@"%f", self.firstValue];
+        NSString *displayString = [self getDisplayString:self.firstValue];
         self.displayLabel.text = displayString;
-        NSLog(@"Value: %@", displayString);
+        //NSLog(@"Value: %@", displayString);
     }
+}
+
+- (NSString*) getDisplayString:(double) value {
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setUsesGroupingSeparator:NO];
+    [formatter setUsesSignificantDigits:YES];
+    [formatter setMaximumSignificantDigits:13];
+    [formatter setDecimalSeparator:@"."];
+    
+    NSNumber *number = [NSNumber numberWithDouble:value];
+    return [formatter stringFromNumber:number];
 }
 
 #pragma mark - Actions
